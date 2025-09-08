@@ -1,9 +1,9 @@
-price = 732
+price = input("Please enter the price of the item")
 money = input("Please enter the money amount given by the customer in cents")
-if int(money) < price:
+if int(money) < int(price):
     print("You don't have enough money")
 else:
-    change = int(money) - price
+    change = int(money) - int(price)
     print("the change is", change)
     dollar = change//100
     change_left = change - dollar*100
