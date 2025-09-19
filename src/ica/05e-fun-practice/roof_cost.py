@@ -3,7 +3,7 @@ def rect_area(wid,len):
     return area
 
 def roof_cost(area,sqf_cost)
-    
+
     return area*sqf_cost
 
 
