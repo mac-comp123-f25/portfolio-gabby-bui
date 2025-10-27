@@ -130,7 +130,7 @@ def vis_gaps(table):
 # Main program
 def main():
     # This code reads the data, and prints it in a readable format
-    lw_fields, lw_data = read_living_wage_data('DataFiles/wages.csv')
+    lw_fields, lw_data = read_living_wage_data('../DataFiles/wages.csv')
     print_table(lw_data, lw_fields, 15)
 
     # # Sample calls for get_state_living_wage

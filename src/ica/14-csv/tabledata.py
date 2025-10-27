@@ -81,7 +81,7 @@ def main():
     print(lookup_phone('Fox, Susan', directory))
     print(lookup_phone('Shoop, Libby', directory))
 
-    field_names, sun_table = read_csv("DataFiles/sunRiseSet.csv")
+    field_names, sun_table = read_csv("../DataFiles/sunRiseSet.csv")
     print(field_names)
     print(sun_table[0])  # printing just the first row of data
     print_table(sun_table, field_names, 15)
