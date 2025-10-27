@@ -48,10 +48,12 @@ def print_table(table, fields, width=20):
             row_string += print_val + ' '
         print(row_string)
 
+'''
 field_names, sun_table = read_csv("../DataFiles/sunRiseSet.csv")
 print(field_names)
 print(sun_table[0])  # printing just the first row of data
 print_table(sun_table, field_names, 15)
+'''
 
 def lookup_phone(name, direct_table):
     """

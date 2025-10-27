@@ -105,6 +105,23 @@ def main():
     print("Sunsets before 10pm =", count_sunsets_before(22, sun_table))
     print("Sunsets before 4pm =", count_sunsets_before(16, sun_table))
 
+def lookup_office(name, direct_table):
+    for row in direct_table:
+        if row['Name'] == name:
+            return print("The building that",name,"works in is:",row['Building'],"and the office number is:",row["OfficeNum"])
+
+    return print("No entry: " + name)
+
+def lookup_by_date(month,day,file_back):
+    title,direct_table = read_csv(file_back)
+    for row in direct_table:
+        if row['Month'] == month and int(row['Day']) == day:
+            return row['SunSetHour']
+
+    return "No entry" + month + " " + str(day)
 
 if __name__ == '__main__':
     main()
+
+lookup_office('Bui, Gabby', directory)
+print("The sunset hour is",lookup_by_date('January',1,'../DataFiles/sunRiseSet.csv'))
