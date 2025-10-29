@@ -120,8 +120,51 @@ def lookup_by_date(month,day,file_back):
 
     return "No entry" + month + " " + str(day)
 
+def collect_by_building(building, table):
+    """
+    Given the name of a building, and a sunTable, make a list of all
+    the entries in the sunTable belonging to that building and return
+    that list
+    """
+    match_list = []
+    for row in table:
+        if row['Building'] == building:
+            match_list.append(row)
+
+    return match_list
+
+def collect_by_letter(cap_letter,table):
+    match_list = []
+    for row in table:
+        if row['Name'][0] == cap_letter:
+            match_list.append(row)
+
+    return match_list
+
+def select_by_month(month,table):
+    title, direct_table = read_csv(table)
+    match_list = []
+    for row in direct_table:
+        if row['Month'] == month:
+            match_list.append(row)
+
+    return match_list
+
+def average_daylight_time(table):
+    title, direct_table = read_csv(table)
+    sum_daylight_hours = 0
+    for row in direct_table:
+        sum_daylight_hours += daylight_hours(float(row['SunRiseHour']),float(row['SunRiseMin']),float(row['SunSetHour']),float(row['SunSetMin']))
+
+    average_daylight_hours = sum_daylight_hours / len(direct_table)
+    return round(average_daylight_hours,2)
+
 if __name__ == '__main__':
     main()
 
-lookup_office('Bui, Gabby', directory)
-print("The sunset hour is",lookup_by_date('January',1,'../DataFiles/sunRiseSet.csv'))
+#lookup_office('Bui, Gabby', directory)
+#print("The sunset hour is",lookup_by_date('January',1,'../DataFiles/sunRiseSet.csv'))
+#print(collect_by_building('Olin-Rice', directory))
+#print(collect_by_letter('F',directory))
+#print(select_by_month('January','../DataFiles/sunRiseSet.csv'))
+print(average_daylight_time('../DataFiles/sunRiseSet.csv'))
