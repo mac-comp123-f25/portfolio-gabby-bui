@@ -11,9 +11,13 @@ class BasicGui:
         self.guiButton2["text"] = "Hello"
         self.guiButton2.grid(column=0, row=1)
 
+        self.guiButton2["command"] = self.Hellobutton
+
         self.guiButton3 = tk.Button(self.mainWin)
         self.guiButton3["text"] = "Goodbye"
         self.guiButton3.grid(column=0, row=2)
+
+        self.guiButton3["command"] = self.Goodbyebutton
 
         self.welcome = tk.Label(self.mainWin)
         self.welcome["text"] = "Welcome"
@@ -31,6 +35,11 @@ class BasicGui:
 
     def Hellobutton(self):
         self.welcome["text"] = "Hello"
+        self.guiButton2.config(text="Hellos")
+
+
+    def Goodbyebutton(self):
+        self.guiButton3.config(text="Goodbyes")
 
 
 myGui = BasicGui()
