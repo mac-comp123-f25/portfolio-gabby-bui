@@ -17,7 +17,7 @@ def draw_christmas_tree():
     t.pendown()
     t.color("brown")
     t.begin_fill()
-    for _ in range(2):
+    for i in range(2):
         t.forward(30)
         t.left(90)
         t.forward(50)
